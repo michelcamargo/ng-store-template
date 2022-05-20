@@ -1,26 +1,24 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TemplateComponent } from './modules/view-template/shared/components/template/template.component';
-import { HeaderComponent } from './modules/view-template/shared/components/header/header.component';
-import { FooterComponent } from './modules/view-template/shared/components/footer/footer.component';
 import { NotFoundViewComponent } from './views/not-found/not-found-view.component';
 import { HomeViewComponent } from './views/home/home-view.component';
+import { ViewTemplateModule } from './modules/view-template/private/view-template.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TemplateComponent,
-    HeaderComponent,
-    FooterComponent,
     NotFoundViewComponent,
-    HomeViewComponent
+    HomeViewComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ViewTemplateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

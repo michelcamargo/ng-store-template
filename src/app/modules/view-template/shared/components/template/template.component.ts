@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import { TemplateService } from '../../services/template.service';
 
 @Component({
   selector: 'app-template',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(TemplateService) private templateService: TemplateService) {
+
+  }
 
   ngOnInit(): void {
   }
